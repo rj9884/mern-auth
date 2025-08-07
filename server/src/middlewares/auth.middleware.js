@@ -3,14 +3,12 @@ import { ApiError } from "../utils/apiError.js";
 
 const userAuth = async (req, res, next) => {
     const {token} = req.cookies;
-    console.log("Incoming Cookie:", req.cookies.token);
 
     if(!token) return res.json(new ApiError(408, "Not Authorized. Login Again"))
 
         try {
             
             const decodedtoken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-            console.log("Decoded Token:", decodedtoken);
 
             if(decodedtoken._id) {
                 req.body = req.body || {};
