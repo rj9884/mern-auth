@@ -17,7 +17,7 @@ app.get('/ping', (req, res) => {
   res.send('pong');
 });
 app.get("/", (_, res)=> res.json({
-  message: "🔐 MERN Authentication API is running successfully!",
+  message: "MERN Authentication API is running successfully!",
   status: "active",
   version: "1.0.0",
   endpoints: {
