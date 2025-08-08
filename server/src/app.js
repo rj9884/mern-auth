@@ -16,16 +16,8 @@ app.use(express.urlencoded({extended: true, limit:"16kb"}));
 app.get('/ping', (req, res) => {
   res.send('pong');
 });
-app.get("/", (_, res)=> res.json({
-  message: "MERN Authentication API is running successfully!",
-  status: "active",
-  version: "1.0.0",
-  endpoints: {
-    auth: "/api/v1/auth",
-    user: "/api/v1/user"
-  },
-  documentation: "Check the README.md for API documentation"
-}));
+app.get("/", (req, res)=> res.send("MERN Authentication API is running successfully!"));
+
 import authRouter from './routes/auth.route.js'
 app.use('/api/v1/auth',authRouter);
 
