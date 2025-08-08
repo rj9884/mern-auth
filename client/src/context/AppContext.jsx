@@ -4,9 +4,12 @@ import { toast } from "react-toastify";
 
 export const AppContext = createContext()
 
-export const AppContextProvider = (props) => {
+// Configure axios defaults
+axios.defaults.withCredentials = true;
+axios.defaults.xsrfCookieName = 'csrf_token';
+axios.defaults.xsrfHeaderName = 'X-CSRF-Token';
 
-    axios.defaults.withCredentials = true
+export const AppContextProvider = (props) => {
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [isLoggedin, setIsLoggedin] = useState(false)
@@ -14,9 +17,7 @@ export const AppContextProvider = (props) => {
 
     const getAuthState = async () => {
         try {
-            const { data } = await axios.get(`${backendUrl}/api/v1/auth/is-auth`, {
-                withCredentials: true
-            });
+            const { data } = await axios.get(`${backendUrl}/api/v1/auth/is-auth`);
 
 
             if (data.success) {
@@ -30,9 +31,7 @@ export const AppContextProvider = (props) => {
 
     const getUserData = async () => {
         try {
-            const { data } = await axios.get(`${backendUrl}/api/v1/auth/is-auth`, {
-                withCredentials: true
-            });
+            const { data } = await axios.get(`${backendUrl}/api/v1/auth/is-auth`);
 
 
             data.success ? setUserData(data.userData) : toast.error(data.data)

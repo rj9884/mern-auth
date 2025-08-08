@@ -163,8 +163,7 @@ const verifyEmail = async (req, res) => {
 const isAuthenticated = async (req, res) => {
     try {
         return res.json(new ApiResponse(201, "User is Authenticated"));
-        
-        
+         
     } catch (error) {
 
         throw new ApiError(400, `Error: ${error}`)

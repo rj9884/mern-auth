@@ -11,7 +11,6 @@ const Navbar = () => {
 
     const sendVerificationOtp = async () => {
         try {
-            axios.defaults.withCredentials = true;
             const {data} = await axios.post(backendUrl + '/api/v1/auth/send-verify-otp')
     
             if(data.success) {
@@ -27,7 +26,6 @@ const Navbar = () => {
     
     const logout = async () => {
         try {
-            axios.defaults.withCredentials = true;
             const {data} = await axios.post(backendUrl + '/api/v1/auth/logout')
 
             data.success && setIsLoggedin(false)
