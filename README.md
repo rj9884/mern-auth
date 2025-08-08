@@ -4,8 +4,8 @@ A modern, full-stack authentication system built with the MERN stack (MongoDB, E
 
 ## 🌐 Live Demo
 
-- **Frontend**: [https://mern-auth-frontend-ffah.onrender.com](https://mern-auth-frontend-ffah.onrender.com)
-- **Backend API**: [https://mern-auth-backend-ffah.onrender.com](https://mern-auth-backend-ffah.onrender.com)
+- **Frontend**: <a href="https://mern-auth-frontend-ffah.onrender.com" target="_blank" rel="noopener noreferrer">https://mern-auth-frontend-ffah.onrender.com</a>
+- **Backend API**: <a href="https://mern-auth-backend-ffah.onrender.com" target="_blank" rel="noopener noreferrer">https://mern-auth-backend-ffah.onrender.com</a>
 
 ---
 
