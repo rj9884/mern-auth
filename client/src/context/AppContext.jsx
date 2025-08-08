@@ -31,10 +31,13 @@ export const AppContextProvider = (props) => {
 
     const getUserData = async () => {
         try {
-            const { data } = await axios.get(`${backendUrl}/api/v1/auth/is-auth`);
-
-
-            data.success ? setUserData(data.userData) : toast.error(data.data)
+            const { data } = await axios.get(`${backendUrl}/api/v1/user/data`);
+            
+            if (data.success) {
+                setUserData(data.userData)
+            } else {
+                toast.error(data.data)
+            }
         } catch (error) {
             toast.error(error.message);
         }

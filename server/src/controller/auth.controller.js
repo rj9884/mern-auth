@@ -22,10 +22,11 @@ const register = async (req, res) => {
 
         const token = user.generateToken();
 
+        const isProduction = process.env.NODE_ENV === 'production';
         res.cookie('token', token, {
             httpOnly: true,
-            secure: true,
-            sameSite: "None",
+            secure: isProduction,
+            sameSite: isProduction ? 'None' : 'Lax',
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
@@ -63,10 +64,11 @@ const login = async (req, res) => {
 
         const token = user.generateToken();
 
+        const isProduction = process.env.NODE_ENV === 'production';
         res.cookie('token', token, {
             httpOnly: true,
-            secure: true,
-            sameSite: "None",
+            secure: isProduction,
+            sameSite: isProduction ? 'None' : 'Lax',
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
 
@@ -83,13 +85,12 @@ const login = async (req, res) => {
 
 const logout = async (req, res) => {
     try {
+        const isProduction = process.env.NODE_ENV === 'production';
         res.clearCookie("token", {
             httpOnly: true,
-            secure: true,
-            sameSite: "None",
-
-        }
-        )
+            secure: isProduction,
+            sameSite: isProduction ? 'None' : 'Lax',
+        })
         return res.status(200).json(new ApiResponse(201, "User loggedOut Successfully"))
 
     } catch (error) {
