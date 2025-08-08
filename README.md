@@ -2,6 +2,11 @@
 
 A modern, full-stack authentication system built with the MERN stack (MongoDB, Express, React, Node.js). Features secure user registration, login, JWT authentication, email verification, password reset, and a beautiful UI powered by Tailwind CSS.
 
+## 🌐 Live Demo
+
+- **Frontend**: [https://mern-auth-frontend-ffah.onrender.com](https://mern-auth-frontend-ffah.onrender.com)
+- **Backend API**: [https://mern-auth-backend-ffah.onrender.com](https://mern-auth-backend-ffah.onrender.com)
+
 ---
 
 ## 🚀 Features
